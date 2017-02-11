@@ -4,8 +4,8 @@ set -x #echo on
 #Variables
 user=Administrator
 pass="VMware1!"
-tenant=photoncloud
-api=https://192.168.110.93:443
+tenant=vlab
+api=https://192.168.64.90:443
 
-photon target set -c $api && photon target login -u $user@$tenant -p $pass
+echo y | photon target set -c $api && photon target login -u $user@$tenant -p $pass
 

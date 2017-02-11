@@ -11,6 +11,8 @@ tenant2=orgBDevAdmins
 cpu=100
 mem=256
 vm=60
+persistentdisk=100
+persistentddiskcapacity=200
 
 #create tenant 1
 photon -n tenant create $tenant1
@@ -19,7 +21,7 @@ photon -n tenant create $tenant2
 
 #create Quota's and assign them to tenants
 photon tenant set $tenant1
-echo y | photon resource-ticket create --name Gold --limits "vm.cpu $cpu COUNT, vm.memory $mem GB, vm $vm COUNT"
+echo y | photon resource-ticket create --name Gold --limits "vm.cpu $cpu COUNT, vm.memory $mem GB, vm $vm COUNT, persistent-disk $persistentdisk COUNT, persistent-disk.capacity $persistentddiskcapacity GB"
 
 photon tenant set $tenant2
-echo y | photon resource-ticket create --name Gold --limits "vm.cpu $cpu COUNT, vm.memory $mem GB, vm $vm COUNT"
+echo y | photon resource-ticket create --name Gold --limits "vm.cpu $cpu COUNT, vm.memory $mem GB, vm $vm COUNT, persistent-disk $persistentdisk COUNT, persistent-disk.capacity $persistentddiskcapacity GB"
