@@ -2,8 +2,8 @@
 set -x #echo on
 
 #tenants
-tenant1=orgADevAdmins
-tenant2=orgBDevAdmins
+tenant1=orgADevs
+tenant2=orgBDevs
 
 #projects
 project1=orgADept1
