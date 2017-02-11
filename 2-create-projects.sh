@@ -16,15 +16,17 @@ quota=Gold
 cpu=50
 mem=128
 vm=30
+persistentdisk=50
+persistentddiskcapacity=250
 
 #create projects
 
 photon tenant set $tenant1
-echo y | photon project create -n $project1 -r $quota -l "vm.cpu $cpu COUNT, vm.memory $mem GB, vm $vm COUNT"
-echo y | photon project create -n $project2 -r $quota -l "vm.cpu $cpu COUNT, vm.memory $mem GB, vm $vm COUNT"
+echo y | photon project create -n $project1 -r $quota -l "vm.cpu $cpu COUNT, vm.memory $mem GB, vm $vm COUNT, persistent-disk $persistentdisk COUNT, persistent-disk.capacity $persistentddiskcapacity GB"
+echo y | photon project create -n $project2 -r $quota -l "vm.cpu $cpu COUNT, vm.memory $mem GB, vm $vm COUNT, persistent-disk $persistentdisk COUNT, persistent-disk.capacity $persistentddiskcapacity GB"
 
 photon tenant set $tenant2
-echo y | photon project create -n $project3 -r $quota -l "vm.cpu $cpu COUNT, vm.memory $mem GB, vm $vm COUNT"
-echo y | photon project create -n $project4 -r $quota -l "vm.cpu $cpu COUNT, vm.memory $mem GB, vm $vm COUNT"
+echo y | photon project create -n $project3 -r $quota -l "vm.cpu $cpu COUNT, vm.memory $mem GB, vm $vm COUNT, persistent-disk $persistentdisk COUNT, persistent-disk.capacity $persistentddiskcapacity GB"
+echo y | photon project create -n $project4 -r $quota -l "vm.cpu $cpu COUNT, vm.memory $mem GB, vm $vm COUNT, persistent-disk $persistentdisk COUNT, persistent-disk.capacity $persistentddiskcapacity GB"
 
 
