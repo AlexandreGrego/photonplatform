@@ -23,6 +23,6 @@ photon -n tenant create $tenant2
 
 #create Quota's and assign them to tenants
 photon tenant set $tenant1
-echo y | photon resource-ticket create --name Gold --limits "vm.cpu $cpu COUNT, vm.memory $mem GB, vm $vm COUNT, persistent-disk.count $persistentdisk COUNT, persistent-disk.capacity $persistentddiskcapacity GB, ephemeral-disk.count $ephemeraldisk COUNT, ephemeral-disk.capacity $ephemeraldiskcapacity GB"
+echo y | photon resource-ticket create --name Gold --limits "vm.cpu $cpu COUNT, vm.memory $mem GB, vm $vm COUNT, persistent-disk.count $persistentdisk COUNT, persistent-disk.capacity $persistentddiskcapacity GB, ephemeral-disk $ephemeraldisk COUNT, ephemeral-disk.capacity $ephemeraldiskcapacity GB"
 photon tenant set $tenant2
-echo y | photon resource-ticket create --name Gold --limits "vm.cpu $cpu COUNT, vm.memory $mem GB, vm $vm COUNT, persistent-disk.count $persistentdisk COUNT, persistent-disk.capacity $persistentddiskcapacity GB, ephemeral-disk.count $ephemeraldisk COUNT, ephemeral-disk.capacity $ephemeraldiskcapacity GB"
+echo y | photon resource-ticket create --name Gold --limits "vm.cpu $cpu COUNT, vm.memory $mem GB, vm $vm COUNT, persistent-disk.count $persistentdisk COUNT, persistent-disk.capacity $persistentddiskcapacity GB, ephemeral-disk $ephemeraldisk COUNT, ephemeral-disk.capacity $ephemeraldiskcapacity GB"
