@@ -1,0 +1,89 @@
+hosts:
+  - address_ranges: 192.168.110.151
+    username: root
+    password: 'VMware1!'
+    usage_tags:
+      - MGMT
+    metadata:
+      ALLOWED_DATASTORES: "ds-site-a-nfs01,ds-site-a-nfs02"
+      MANAGEMENT_DATASTORE: ds-site-a-nfs02
+      MANAGEMENT_PORTGROUP: Management Network
+      MANAGEMENT_NETWORK_NETMASK: 255.255.255.0
+      MANAGEMENT_NETWORK_DNS_SERVER: 192.168.110.10
+      MANAGEMENT_NETWORK_GATEWAY: 192.168.110.1
+      MANAGEMENT_VM_CPU_COUNT_OVERWRITE: 2
+      MANAGEMENT_VM_MEMORY_MB_OVERWRITE: 2048
+      MANAGEMENT_VM_DISK_GB_OVERWRITE: 80
+      MANAGEMENT_VM_IPS: 192.168.110.91
+  - address_ranges: 192.168.110.152
+    username: root
+    password: 'VMware1!'
+    usage_tags:
+      - MGMT
+    metadata:
+      ALLOWED_DATASTORES: "ds-site-a-nfs01,ds-site-a-nfs02"
+      MANAGEMENT_DATASTORE: ds-site-a-nfs02
+      MANAGEMENT_PORTGROUP: Management Network
+      MANAGEMENT_NETWORK_NETMASK: 255.255.255.0
+      MANAGEMENT_NETWORK_DNS_SERVER: 192.168.110.10
+      MANAGEMENT_NETWORK_GATEWAY: 192.168.110.1
+      MANAGEMENT_VM_CPU_COUNT_OVERWRITE: 2
+      MANAGEMENT_VM_MEMORY_MB_OVERWRITE: 2048
+      MANAGEMENT_VM_DISK_GB_OVERWRITE: 80
+      MANAGEMENT_VM_IPS: 192.168.110.92
+  - address_ranges: 192.168.110.153
+    username: root
+    password: 'VMware1!'
+    usage_tags:
+      - MGMT
+    metadata:
+      ALLOWED_DATASTORES: "ds-site-a-nfs01,ds-site-a-nfs02"
+      MANAGEMENT_DATASTORE: ds-site-a-nfs02
+      MANAGEMENT_PORTGROUP: Management Network
+      MANAGEMENT_NETWORK_NETMASK: 255.255.255.0
+      MANAGEMENT_NETWORK_DNS_SERVER: 192.168.110.10
+      MANAGEMENT_NETWORK_GATEWAY: 192.168.110.1
+      MANAGEMENT_VM_CPU_COUNT_OVERWRITE: 2
+      MANAGEMENT_VM_MEMORY_MB_OVERWRITE: 2048
+      MANAGEMENT_VM_DISK_GB_OVERWRITE: 80
+      MANAGEMENT_VM_IPS: 192.168.110.93
+  - address_ranges: 192.168.110.154
+    username: root
+    password: 'VMware1!'
+    usage_tags:
+      - MGMT
+    metadata:
+      ALLOWED_DATASTORES: "ds-site-a-nfs01,ds-site-a-nfs02"
+      MANAGEMENT_DATASTORE: ds-site-a-nfs02
+      MANAGEMENT_PORTGROUP: Management Network
+      MANAGEMENT_NETWORK_NETMASK: 255.255.255.0
+      MANAGEMENT_NETWORK_DNS_SERVER: 192.168.110.10
+      MANAGEMENT_NETWORK_GATEWAY: 192.168.110.1
+      MANAGEMENT_VM_CPU_COUNT_OVERWRITE: 2
+      MANAGEMENT_VM_MEMORY_MB_OVERWRITE: 2048
+      MANAGEMENT_VM_DISK_GB_OVERWRITE: 80
+      ALLOWED_SERVICES: Lightwave
+      MANAGEMENT_VM_IPS: 192.168.110.94
+  - address_ranges: 192.168.110.155-192.168.110.157
+    username: root
+    password: 'VMware1!'
+    usage_tags:
+      - CLOUD
+    metadata:
+      ALLOWED_DATASTORES: "ds-site-a-nfs01,ds-site-a-nfs02"
+deployment:
+  resume_system: true
+  image_datastores:
+    - ds-site-a-nfs02
+  auth_enabled: true
+  sdn_enabled: false
+  stats_enabled: false
+  syslog_endpoint: 192.168.110.24
+  ntp_endpoint: 192.168.110.10
+  use_image_datastore_for_vms: true
+  loadbalancer_enabled: true
+  oauth_username: Administrator
+  oauth_tenant: photoncloud
+  oauth_password: 'VMware1!'
+  oauth_security_groups:
+    - "photoncloud\\Administrators"
