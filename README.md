@@ -16,7 +16,7 @@ You can modify any of the variables to fit your deployment and environment.
 
 ##Brief overview of what each script is doing.
 
-The scripts are meant to be executed in order. Scripts will use variables that have been created in previous scripts. Please keep this in mind when changing the variables for tenants, projects, and quota's. **Disclaiimer:** I'm not, nor claim to be an expert in shell scripting! I'm always looking for feedback on how these can be improved. Thank you!
+The scripts are meant to be executed in order. Scripts will use variables that have been created in previous scripts. Please keep this in mind when changing the variables for tenants, projects, and quota's. **Disclaimer:** I'm not, nor claim to be an expert in shell scripting! I'm always looking for feedback on how these can be improved. Thank you!
 
 **[login.sh](login.sh)**
   - This script will login and authenticate you to Photon Platform. If your token expires you can always re-run this script to log back in.
