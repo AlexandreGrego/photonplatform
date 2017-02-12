@@ -1,4 +1,4 @@
-#PhotonPlatform
+#PhotonPlatform configuration and validation scripts
 
 The purpose of this repository is to help automate the initial configuration of Tenants, Projects, Quota's, Networks, Images, Clusters (Harbor and Kubernetes).
 You can modify any of the variables to fit your deployment and environment. 
@@ -33,16 +33,23 @@ You can modify any of the variables to fit your deployment and environment.
   - When you create a project, you will also assign a portion of the quota created in the previous script. For example, the quota variables in this script are half of what was created previously. This allows you to allocate resources to two projects.
 
 **[3-create-flavors.sh](3-create-flavors.sh)**
-  - 
+  - Flavors are a mapped either to a VM or disk image at the time of deployment. When you create a VM, it will be launched with a specific flavor. 
+  - This script creates 3 different flavors tiny, small, and medium. 
+  - Modify the flavor size variables to match your tenant workloads.
   
 **[4-create-networks.sh](4-create-networks.sh)**
-  - 
+  - Networks are needed to provision the tenant instances.
+  - These networks need to pre-created on every cloud host in your enviornment.
+  - This script creates one "tenant network" and also sets it as the default network. The default network is used later for deploying Kubernetes and other Cluster types.
   
 **[5-create-images.sh](5-create-images.sh)**
-  - 
+  - You can import any image that is an OVA or VMDK from your envirnment. Photon Platform has pre-built images that can be used for automatically deploying Kubernetes clusters and Harbor Registry's.
+  - Download the Kubernetes and Harbor images [here](https://github.com/vmware/photon-controller/releases)
+  - Place these two OVA files in a directory called `images`
+  - The script will import them into Photon Platform and make them available for all tenants to consume.
   
 **[6-create-cluster-types.sh](6-create-cluster-types.sh)**
-  -
+  - 
   
 **[7-create-harbor-registry.sh](7-create-harbor-registry.sh)**
   - 
