@@ -55,7 +55,7 @@ You can modify any of the variables to fit your deployment and environment.
   
 **[7-create-harbor-registry.sh](7-create-harbor-registry.sh)**
   - This script will deploy a Harbor registry that can be used to store and pull down container images.
-  - he IP Address for the Master needs to match the network you created with [4-create-networks.sh](4-create-networks.sh).
+  - The IP Address for the Master needs to match the network you created with [4-create-networks.sh](4-create-networks.sh).
   - If you want to find out more information on Harbor, [click here](https://github.com/vmware/harbor)
   
 **[8-create-k8s-cluster.sh](8-create-k8s-cluster.sh)**
