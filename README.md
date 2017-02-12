@@ -1,4 +1,4 @@
-#PhotonPlatform configuration and validation scripts
+#Photon Platform configuration and validation scripts
 
 The purpose of this repository is to help automate the initial configuration of Tenants, Projects, Quota's, Networks, Images, Clusters (Harbor and Kubernetes).
 You can modify any of the variables to fit your deployment and environment. 
@@ -46,16 +46,19 @@ You can modify any of the variables to fit your deployment and environment.
   - You can import any image that is an OVA or VMDK from your envirnment. Photon Platform has pre-built images that can be used for automatically deploying Kubernetes clusters and Harbor Registry's.
   - Download the Kubernetes and Harbor images [here](https://github.com/vmware/photon-controller/releases)
   - Place these two OVA files in a directory called `images`
-  - The script will import them into Photon Platform and make them available for all tenants to consume.
+  - The script will import the Harbor and Kubernetes images into Photon Platform and make them available for all tenants to consume.
   
 **[6-create-cluster-types.sh](6-create-cluster-types.sh)**
-  - 
+  - This script enables Kubernetes and Harbor as available cluster types to deploy
+  - In order for this script to run, the images must already be imported in the previous script
+  - This will match an image with the appropriate cluster type. For example, the kubernetes image will be matched with the Kubernetes cluster-type
   
 **[7-create-harbor-registry.sh](7-create-harbor-registry.sh)**
-  - 
+  - This script will deploy a Harbor registry that can be used to store and pull down container images.
   
 **[8-create-k8s-cluster.sh](8-create-k8s-cluster.sh)**
-  - 
+  - This will automate the deployment of a Kubernetes cluster
+  - You can change the number of workers you want to deploy or you can scale the deployment later with `photon cluster resize <uuid cluster> <number of workers>`
   
   
 
