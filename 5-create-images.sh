@@ -16,8 +16,6 @@ k8s="images/kubernetes-1.4.3-pc-1.1.0-5de1cb7.ova"
 harbor="images/harbor-0.4.1-pc-1.1.0-5de1cb7.ova"
 
 #import images
-photon tenant set $tenant1
-photon project set $project1
 
 #import kubernetes image
 photon image create "$k8s" -n kubernetes -i EAGER
