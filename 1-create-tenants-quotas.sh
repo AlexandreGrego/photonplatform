@@ -7,6 +7,7 @@ set -x #echo on
 tenant1=orgADevs
 tenant2=orgBDevs
 
+##TOTAL CLOUD RESOURCES (Compute/Storage)##
 #quota variables
 cpu=100
 mem=256
