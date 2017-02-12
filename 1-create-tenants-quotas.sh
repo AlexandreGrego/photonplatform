@@ -7,7 +7,8 @@ set -x #echo on
 tenant1=orgADevs
 tenant2=orgBDevs
 
-##TOTAL CLOUD RESOURCES (Compute/Storage)##
+##total your cloud resources and divide by 2 for compute and storage)##
+##this will create two tenants an assign half the cloud resources to each tenant##
 #quota variables
 cpu=100
 mem=256
