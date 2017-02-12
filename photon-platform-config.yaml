@@ -70,7 +70,7 @@ hosts:
     usage_tags:
       - CLOUD
     metadata:
-      ALLOWED_DATASTORES: "ds-site-a-nfs01,ds-site-a-nfs02"
+      ALLOWED_DATASTORES: "ds-site-a-nfs02"
 deployment:
   resume_system: true
   image_datastores:
