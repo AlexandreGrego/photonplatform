@@ -1,11 +1,11 @@
 #!/bin/bash
 set -x #echo on
 
-#tenants
+#tenant variables
 tenant1=orgADevs
 tenant2=orgBDevs
 
-#projects
+#project variables
 project1=orgADept1
 project2=orgADept2
 project3=orgBDept1
@@ -18,6 +18,7 @@ echo y | photon flavor create --name "tiny-vm" --kind "vm" --cost "vm.cpu 1 COUN
 echo y | photon flavor create --name "small-vm" --kind "vm" --cost "vm.cpu 1 COUNT, vm.memory 1 GB, vm.cost 2 COUNT"
 echo y | photon flavor create --name "medium-vm" --kind "vm" --cost "vm.cpu 2 COUNT, vm.memory 2 GB, vm.cost 3 COUNT"
 
+#commented out for future release
 : '
 photon tenant set $tenant1
 photon project set $project2
