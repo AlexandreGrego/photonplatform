@@ -22,13 +22,13 @@ You can modify any of the variables to fit your deployment and environment.
   - After the deployment is complete it will display your API endpoint
 
 **[1-create-tenants-quotas.sh](1-create-tenants-quotas.sh)**
-  - Photon Platform has multiple levels of tenancy, the first one tenants.
+  - Photon Platform has multiple levels of tenancy, the first one is tenants.
   - First, the script will create two tenants `orgADevs` and `orgBDevs`. You can modify these to fit your organziation hierachy.
   - Second, the script will create identical quota's (cloud resources) in each tenant created.
   - Modify the #quota variables to match your cloud environment
  
 **[2-create-projects.sh](2-create-projects.sh)**
-  - Projects are the second level of tenancy in Photon Platform. Projects are built inside of tenants. 
+  - Projects are the second level of tenancy in Photon Platform. Projects are created inside of tenants. 
   - This script will create two projects inside each tenant created in the previous script.
   - When you create a project, you will also assign a portion of the quota created in the previous script. For example, the quota variables in this script are half of what was created previously. This allows you to allocate resources to two projects.
 
