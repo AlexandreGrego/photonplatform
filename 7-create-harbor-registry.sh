@@ -3,7 +3,7 @@ set -x #echo on
 
 #variables
 pass="VMware1!"
-name=k8cluster01
+name=habor01
 dns=192.168.110.10
 gw=192.168.110.1
 mask=255.255.255.0
