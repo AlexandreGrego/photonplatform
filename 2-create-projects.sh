@@ -1,17 +1,17 @@
 #!/bin/bash
 set -x #echo on
 
-#tenants
+#tenant variables
 tenant1=orgADevs
 tenant2=orgBDevs
 
-#projects
+#project variables
 project1=orgADept1
 project2=orgADept2
 project3=orgBDept1
 project4=orgBDept2
 
-#quota's
+#quota variables
 quota=Gold
 cpu=50
 mem=128
