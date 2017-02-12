@@ -7,7 +7,7 @@ name=habor01
 dns=192.168.110.10
 gw=192.168.110.1
 mask=255.255.255.0
-masterip=192.168.110.25
+masterip=192.168.110.20
 flavor=medium-vm
 
 #create harbor registry
