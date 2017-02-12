@@ -3,11 +3,11 @@ set -x #echo on
 
 #create the tenants and assign resource tickets to each tenant
 
-#tenants
+#tenant variables
 tenant1=orgADevs
 tenant2=orgBDevs
 
-#quota's
+#quota variables
 cpu=100
 mem=256
 vm=60
