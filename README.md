@@ -11,7 +11,7 @@ You can modify any of the variables to fit your deployment and environment.
 ##Workstation Software Requirements:
 - photon cli binary [Download](https://github.com/vmware/photon-controller/releases)
   - **NOTE:** You will need to rename the binary from `photon-linux64-1.x.x-xxxxxxx` to `photon`
-- Git (optional: if you want to clone the repository)
+- Git (**optional:** if you want to clone the repository)
 - awk or gawk (If you are executing these on Photon OS you can use "**tdnf install gawk**")
 
 ##Brief overview of what each script is doing.
