@@ -11,7 +11,7 @@ project2=orgADept2
 project3=orgBDept1
 project4=orgBDept2
 
-#flavor sizes
+#flavor size variables
 #tiny-vm
 name=tiny-vm
 cpu=1
