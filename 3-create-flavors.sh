@@ -11,30 +11,24 @@ project2=orgADept2
 project3=orgBDept1
 project4=orgBDept2
 
-#create projects
-photon tenant set $tenant1
-#photon project set $project1
-echo y | photon flavor create --name "tiny-vm" --kind "vm" --cost "vm.cpu 1 COUNT, vm.memory 512 MB, vm.cost 1 COUNT"
-echo y | photon flavor create --name "small-vm" --kind "vm" --cost "vm.cpu 1 COUNT, vm.memory 1 GB, vm.cost 2 COUNT"
-echo y | photon flavor create --name "medium-vm" --kind "vm" --cost "vm.cpu 2 COUNT, vm.memory 2 GB, vm.cost 3 COUNT"
+#flavor sizes
+#tiny-vm
+name=tiny-vm
+cpu=1
+mem=512
+cost=1
+#small-vm
+name=small-vm
+cpu=1
+mem=1
+cost=2
+#medium-vm
+name=medium-vm
+cpu=2
+mem=2
+cost=3
 
-#commented out for future release
-: '
-photon tenant set $tenant1
-photon project set $project2
-echo y | photon flavor create --name "tiny-vm" --kind "vm" --cost "vm.cpu 1 COUNT, vm.memory 512 MB, vm.cost 1 COUNT"
-echo y | photon flavor create --name "small-vm" --kind "vm" --cost "vm.cpu 1 COUNT, vm.memory 1 GB, vm.cost 2 COUNT"
-echo y | photon flavor create --name "medium-vm" --kind "vm" --cost "vm.cpu 2 COUNT, vm.memory 2 GB, vm.cost 3 COUNT"
-
-photon tenant set $tenant2
-photon project set $project3
-echo y | photon flavor create --name "tiny-vm" --kind "vm" --cost "vm.cpu 1 COUNT, vm.memory 512 MB, vm.cost 1 COUNT"
-echo y | photon flavor create --name "small-vm" --kind "vm" --cost "vm.cpu 1 COUNT, vm.memory 1 GB, vm.cost 2 COUNT"
-echo y | photon flavor create --name "medium-vm" --kind "vm" --cost "vm.cpu 2 COUNT, vm.memory 2 GB, vm.cost 3 COUNT"
-
-photon tenant set $tenant2
-photon project set $project4
-echo y | photon flavor create --name "tiny-vm" --kind "vm" --cost "vm.cpu 1 COUNT, vm.memory 512 MB, vm.cost 1 COUNT"
-echo y | photon flavor create --name "small-vm" --kind "vm" --cost "vm.cpu 1 COUNT, vm.memory 1 GB, vm.cost 2 COUNT"
-echo y | photon flavor create --name "medium-vm" --kind "vm" --cost "vm.cpu 2 COUNT, vm.memory 2 GB, vm.cost 3 COUNT"
-'
+#create flavors
+echo y | photon flavor create --name "$name" --kind "vm" --cost "vm.cpu $cpu COUNT, vm.memory $mem MB, vm.cost $cost COUNT"
+echo y | photon flavor create --name "$name" --kind "vm" --cost "vm.cpu $cpu COUNT, vm.memory $mem GB, vm.cost $cost COUNT"
+echo y | photon flavor create --name "$name" --kind "vm" --cost "vm.cpu $cpu COUNT, vm.memory $mem GB, vm.cost $cost COUNT"
