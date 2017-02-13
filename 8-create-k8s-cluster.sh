@@ -22,7 +22,7 @@ flavor=medium-vm
 
 
 photon tenant set $tenant1
-photon project set $orgADept1
+photon project set $project1
 
 #create k8s cluster
 photon cluster create -n $name -k KUBERNETES --dns $dns --gateway $gw --netmask $mask --master-ip $masterip --container-network "$containernet" --etcd1 $etcdip -c $workers -v $flavor
