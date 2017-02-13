@@ -14,7 +14,7 @@ You can modify any of the variables to fit your deployment and environment.
 - Git (**optional:** if you want to clone the repository)
 - awk or gawk (If you are executing these on Photon OS you can use `tdnf install gawk`)
 
-##Brief overview of what each script is doing.
+##Brief overview of the tasks each script is performing. 
 
 The scripts are meant to be executed in order. Scripts will use variables that have been created in previous scripts. Please keep this in mind when changing the variables for tenants, projects, and quota's. **Disclaimer:** I'm not, nor claim to be an expert in shell scripting! I'm always looking for feedback on how these can be improved. Thank you!
 
