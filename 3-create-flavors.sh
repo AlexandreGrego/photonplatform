@@ -13,22 +13,22 @@ project4=orgBDept2
 
 #flavor size variables
 #tiny-vm
-name=tiny-vm
-cpu=1
-mem=512
-cost=1
+tinyname=tiny-vm
+tinycpu=1
+tinymem=512
+tinycost=1
 #small-vm
-name=small-vm
-cpu=1
-mem=1
-cost=2
+smallname=small-vm
+smallcpu=1
+smallmem=1
+smallcost=2
 #medium-vm
-name=medium-vm
-cpu=2
-mem=2
-cost=3
+mediumname=medium-vm
+mediumcpu=2
+mediummem=2
+mediumcost=3
 
 #create flavors
-echo y | photon flavor create --name "$name" --kind "vm" --cost "vm.cpu $cpu COUNT, vm.memory $mem MB, vm.cost $cost COUNT"
-echo y | photon flavor create --name "$name" --kind "vm" --cost "vm.cpu $cpu COUNT, vm.memory $mem GB, vm.cost $cost COUNT"
-echo y | photon flavor create --name "$name" --kind "vm" --cost "vm.cpu $cpu COUNT, vm.memory $mem GB, vm.cost $cost COUNT"
+echo y | photon flavor create --name "$tinyname" --kind "vm" --cost "vm.cpu $tinycpu COUNT, vm.memory $tinymem MB, vm.cost $tinycost COUNT"
+echo y | photon flavor create --name "$smallname" --kind "vm" --cost "vm.cpu $smallcpu COUNT, vm.memory $smallmem GB, vm.cost $smallcost COUNT"
+echo y | photon flavor create --name "$mediumname" --kind "vm" --cost "vm.cpu $mediumcpu COUNT, vm.memory $mediummem GB, vm.cost $mediumcost COUNT"
