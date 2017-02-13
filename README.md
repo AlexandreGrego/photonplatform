@@ -5,7 +5,7 @@ You can modify any of the variables to fit your deployment and environment.
 
 ##Environment requirements:
 - Photon Platform Deployed
-- The repository includes file called **photon-platform-config.yaml**, you can use this as a template to deploy Photon Platform in your environment.
+  - The repository includes two files; [install.sh](install.sh) and [photon-platform-config.yaml](photon-platform-config.yaml), you can conifgure the yaml file to match you environment and use the install script to deploy it with the photon cli binary found below.
 - You can use this guide to deploy Photon Platform - [Photon Controller Quick Start Guide](https://vmware.github.io/photon-controller/assets/files/Photon_Controller_Getting_Started_Guide_20151116.pdf)
 
 ##Workstation Software Requirements:
