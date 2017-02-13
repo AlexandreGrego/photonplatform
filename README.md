@@ -18,6 +18,10 @@ You can modify any of the variables to fit your deployment and environment.
 
 The scripts are meant to be executed in order. Scripts will use variables that have been created in previous scripts. Please keep this in mind when changing the variables for tenants, projects, and quota's. **Disclaimer:** I'm not, nor claim to be an expert in shell scripting! I'm always looking for feedback on how these can be improved. Thank you!
 
+**[install.sh](install.sh)**
+  - This script in conjunction with [photon-platform-config.yaml](photon-platform-config.yaml) will deploy Photon Platform in your environment. The yaml file will have to be changed to match your environment. In the example provided, I'm provisioning 4 Management hosts and 3 Cloud hosts.
+  - If you would like more information on building this deployment template check out the Photon Platform Wiki [Link](https://github.com/vmware/photon-controller/wiki/Deployment-Template)
+  
 **[login.sh](login.sh)**
   - This script will login and authenticate you to Photon Platform. If your token expires you can always re-run this script to log back in.
   - Provide the username/password, and tenant you provided during the installation of Photon Platform
