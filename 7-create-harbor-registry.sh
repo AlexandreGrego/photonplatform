@@ -20,4 +20,7 @@ photon tenant set $tenant1
 photon project set $project1
 
 #create harbor registry
-photon cluster create -n $name -k HARBOR --dns $dns --gateway $gw --netmask $mask --master-ip $masterip -v $flavor --admin-password $pass
+harboruuid=$(photon cluster create -n $name -k HARBOR --dns $dns --gateway $gw --netmask $mask --master-ip $masterip -v $flavor --admin-password $pass | awk '{print $6}')
+
+#show the harbor deployment and save the certificate
+photon cluster show $harboruuid
