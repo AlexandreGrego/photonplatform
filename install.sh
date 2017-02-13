@@ -12,3 +12,6 @@ photon target set http://$installer:9000
 
 #deploy photon platform
 photon system deploy $configyaml
+
+#display the deployed configuration
+photon deployment show
