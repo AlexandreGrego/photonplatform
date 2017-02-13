@@ -11,9 +11,9 @@ project1=orgADept1
 pass="VMware1!"
 name=habor01
 dns=192.168.110.10
-gw=192.168.110.1
+gw=192.168.100.1
 mask=255.255.255.0
-masterip=192.168.110.20
+masterip=192.168.100.20
 flavor=medium-vm
 
 photon tenant set $tenant1
