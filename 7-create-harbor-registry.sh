@@ -24,7 +24,7 @@ photon project set $project1
 echo y | photon cluster create -n $name -k HARBOR --dns $dns --gateway $gw --netmask $mask --master-ip $masterip -v $flavor --admin-password $pass --ssh-key "$sshkey"
 
 #save certificate
-openssl s_client -showcerts -connect $masterip:443 </dev/null 2>/dev/null | sed -n '/-----BEGIN CERTIFICATE-----/,/-----END CERTIFICATE-----/p' | grep -m1 -B 40 -- '-----END CERTIFICATE-----'  > ca_harbor.crt
+openssl s_client -showcerts -connect $masterip:443 </dev/null 2>/dev/null | sed -n '/-----BEGIN CERTIFICATE-----/,/-----END CERTIFICATE-----/p' | grep -m1 -B 40 -- '-----END CERTIFICATE-----'  > $name_ca_harbor.crt
 
 #harboruuid=$(photon cluster list | grep $name | awk '{print $1}')
 #show the harbor deployment and save the certificate
