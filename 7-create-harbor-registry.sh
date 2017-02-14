@@ -23,7 +23,7 @@ photon project set $project1
 #create harbor registry
 echo y | photon cluster create -n $name -k HARBOR --dns $dns --gateway $gw --netmask $mask --master-ip $masterip -v $flavor --admin-password $pass --ssh-key "$sshkey"
 
-#save certificate
+#save certificate with openssl s_client
 openssl s_client -showcerts -connect $masterip:443 </dev/null 2>/dev/null | sed -n '/-----BEGIN CERTIFICATE-----/,/-----END CERTIFICATE-----/p' | grep -m1 -B 40 -- '-----END CERTIFICATE-----'  > $name_ca_harbor.crt
 
 #harboruuid=$(photon cluster list | grep $name | awk '{print $1}')
