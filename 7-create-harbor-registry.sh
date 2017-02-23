@@ -25,7 +25,7 @@ echo y | photon cluster create -n $name -k HARBOR --dns $dns --gateway $gw --net
 
 #save the certificate to file
 harboruuid=$(photon cluster list | grep $name | awk '{print $1}')
-photon cluster cert-to-file $harboruuid $name_cert.crt
+photon cluster cert-to-file $harboruuid "$name"-cert.crt
 
 #save certificate with openssl s_client
 #openssl s_client -showcerts -connect $masterip:443 </dev/null 2>/dev/null | sed -n '/-----BEGIN CERTIFICATE-----/,/-----END CERTIFICATE-----/p' | grep -m1 -B 40 -- '-----END CERTIFICATE-----'  > $name_ca_harbor.crt
