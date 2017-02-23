@@ -7,8 +7,6 @@ tenant1=orgADevs
 #project variables
 project1=orgADept1
 
-photon tenant set $tenant1
-photon project set $orgADept1
 #variables
 name=k8cluster01
 dns=192.168.110.10
