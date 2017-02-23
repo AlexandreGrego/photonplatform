@@ -13,9 +13,9 @@ project4=orgBDept2
 
 #quota variables
 quota=Gold
-cpu=50
-mem=128
-vm=30
+cpu=100
+mem=256
+vm=60
 persistentdisk=50
 persistentddiskcapacity=1000
 ephemeraldisk=50
