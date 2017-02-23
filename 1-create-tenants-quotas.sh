@@ -11,7 +11,7 @@ tenant2=orgBDevs
 ##this will create two tenants an assign half the cloud resources to each tenant##
 #quota variables
 cpu=200
-mem=500
+mem=512
 vm=120
 persistentdisk=100
 persistentddiskcapacity=2000
