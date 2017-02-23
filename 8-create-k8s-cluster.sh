@@ -18,7 +18,7 @@ containernet=10.2.0.0/16
 workers=1
 flavor=medium-vm
 sshkey="../.ssh/id_rsa.pub"
-registryca=ca_harbor.crt
+registryca=harbor01-cert.crt
 
 photon tenant set $tenant1
 photon project set $project1
