@@ -17,9 +17,9 @@ cpu=50
 mem=128
 vm=30
 persistentdisk=50
-persistentddiskcapacity=250
+persistentddiskcapacity=1000
 ephemeraldisk=50
-ephemeraldiskcapacity=250
+ephemeraldiskcapacity=1000
 
 #create projects
 photon tenant set $tenant1
