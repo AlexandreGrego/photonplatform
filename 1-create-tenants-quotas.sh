@@ -10,9 +10,9 @@ tenant2=orgBDevs
 ##total your cloud resources and divide by 2 for quota variables##
 ##this will create two tenants an assign half the cloud resources to each tenant##
 #quota variables
-cpu=100
-mem=256
-vm=60
+cpu=200
+mem=500
+vm=120
 persistentdisk=100
 persistentddiskcapacity=2000
 ephemeraldisk=100
