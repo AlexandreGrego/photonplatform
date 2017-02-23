@@ -14,9 +14,9 @@ cpu=100
 mem=256
 vm=60
 persistentdisk=100
-persistentddiskcapacity=500
+persistentddiskcapacity=2000
 ephemeraldisk=100
-ephemeraldiskcapacity=500
+ephemeraldiskcapacity=2000
 
 #create tenant 1
 photon -n tenant create $tenant1
