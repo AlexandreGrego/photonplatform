@@ -12,8 +12,8 @@ project3=orgBDept1
 project4=orgBDept2
 
 #image variables
-k8s="images/kubernetes-1.4.3-pc-1.1.0-5de1cb7.ova"
-harbor="images/harbor-0.4.1-pc-1.1.0-5de1cb7.ova"
+k8s="images/kubernetes-1.5.1-pc-1.1.1-dfea3bb.ova"
+harbor="images/harbor-0.4.1-pc-1.1.1-dfea3bb.ova"
 
 #import images
 
