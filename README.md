@@ -17,7 +17,10 @@ You can modify any of the variables to fit your deployment and environment.
 ##Brief overview of the tasks each script is performing. 
 
 The scripts are meant to be executed in order. Scripts will use variables that have been created in previous scripts. Please keep this in mind when changing the variables for tenants, projects, and quota's. **Disclaimer:** I'm not, nor claim to be an expert in shell scripting! I'm always looking for feedback on how these can be improved. Thank you!
-  
+
+**[globalvars.sh](globalvars.sh)**
+  - This script set the global variables to be called in other scripts. It will declare all the tenants and projects as variables to be called later. Please modify this script to your environment.
+
 **[login.sh](login.sh)**
   - This script will login and authenticate you to Photon Platform. If your token expires you can always re-run this script to log back in.
   - Provide the username/password, and tenant you provided during the installation of Photon Platform
