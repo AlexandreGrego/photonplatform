@@ -1,89 +1,166 @@
-hosts:
-  - address_ranges: 192.168.110.151
-    username: root
-    password: 'VMware1!'
-    usage_tags:
-      - MGMT
-    metadata:
-      ALLOWED_DATASTORES: "ds-site-a-nfs01,ds-site-a-nfs02"
-      MANAGEMENT_DATASTORE: ds-site-a-nfs02
-      MANAGEMENT_PORTGROUP: Management Network
-      MANAGEMENT_NETWORK_NETMASK: 255.255.255.0
-      MANAGEMENT_NETWORK_DNS_SERVER: 192.168.110.10
-      MANAGEMENT_NETWORK_GATEWAY: 192.168.110.1
-      MANAGEMENT_VM_CPU_COUNT_OVERWRITE: 2
-      MANAGEMENT_VM_MEMORY_MB_OVERWRITE: 2048
-      MANAGEMENT_VM_DISK_GB_OVERWRITE: 80
-      MANAGEMENT_VM_IPS: 192.168.110.91
-  - address_ranges: 192.168.110.152
-    username: root
-    password: 'VMware1!'
-    usage_tags:
-      - MGMT
-    metadata:
-      ALLOWED_DATASTORES: "ds-site-a-nfs01,ds-site-a-nfs02"
-      MANAGEMENT_DATASTORE: ds-site-a-nfs02
-      MANAGEMENT_PORTGROUP: Management Network
-      MANAGEMENT_NETWORK_NETMASK: 255.255.255.0
-      MANAGEMENT_NETWORK_DNS_SERVER: 192.168.110.10
-      MANAGEMENT_NETWORK_GATEWAY: 192.168.110.1
-      MANAGEMENT_VM_CPU_COUNT_OVERWRITE: 2
-      MANAGEMENT_VM_MEMORY_MB_OVERWRITE: 2048
-      MANAGEMENT_VM_DISK_GB_OVERWRITE: 80
-      MANAGEMENT_VM_IPS: 192.168.110.92
-  - address_ranges: 192.168.110.153
-    username: root
-    password: 'VMware1!'
-    usage_tags:
-      - MGMT
-    metadata:
-      ALLOWED_DATASTORES: "ds-site-a-nfs01,ds-site-a-nfs02"
-      MANAGEMENT_DATASTORE: ds-site-a-nfs02
-      MANAGEMENT_PORTGROUP: Management Network
-      MANAGEMENT_NETWORK_NETMASK: 255.255.255.0
-      MANAGEMENT_NETWORK_DNS_SERVER: 192.168.110.10
-      MANAGEMENT_NETWORK_GATEWAY: 192.168.110.1
-      MANAGEMENT_VM_CPU_COUNT_OVERWRITE: 2
-      MANAGEMENT_VM_MEMORY_MB_OVERWRITE: 2048
-      MANAGEMENT_VM_DISK_GB_OVERWRITE: 80
-      MANAGEMENT_VM_IPS: 192.168.110.93
-  - address_ranges: 192.168.110.154
-    username: root
-    password: 'VMware1!'
-    usage_tags:
-      - MGMT
-    metadata:
-      ALLOWED_DATASTORES: "ds-site-a-nfs01,ds-site-a-nfs02"
-      MANAGEMENT_DATASTORE: ds-site-a-nfs02
-      MANAGEMENT_PORTGROUP: Management Network
-      MANAGEMENT_NETWORK_NETMASK: 255.255.255.0
-      MANAGEMENT_NETWORK_DNS_SERVER: 192.168.110.10
-      MANAGEMENT_NETWORK_GATEWAY: 192.168.110.1
-      MANAGEMENT_VM_CPU_COUNT_OVERWRITE: 2
-      MANAGEMENT_VM_MEMORY_MB_OVERWRITE: 2048
-      MANAGEMENT_VM_DISK_GB_OVERWRITE: 80
-      ALLOWED_SERVICES: Lightwave
-      MANAGEMENT_VM_IPS: 192.168.110.94
-  - address_ranges: 192.168.110.155-192.168.110.157
-    username: root
-    password: 'VMware1!'
-    usage_tags:
-      - CLOUD
-    metadata:
-      ALLOWED_DATASTORES: "ds-site-a-nfs02"
-deployment:
-  resume_system: true
-  image_datastores:
-    - ds-site-a-nfs02
-  auth_enabled: true
-  sdn_enabled: false
-  stats_enabled: false
-  syslog_endpoint: 192.168.110.24
-  ntp_endpoint: 192.168.110.10
-  use_image_datastore_for_vms: true
-  loadbalancer_enabled: true
-  oauth_username: Administrator
-  oauth_tenant: photoncloud
-  oauth_password: 'VMware1!'
-  oauth_security_groups:
-    - "photoncloud\\Administrators"
+compute:
+  hypervisors:
+    esxmgmt-01a:
+      hostname: "esxmgmt-01a.corp.local"
+      ipaddress: "192.168.110.151"
+      dns: "192.168.110.94"
+      credential:
+        username: "root"
+        password: "VMware1!"
+    esxmgmt-02a:
+      hostname: "esxmgmt-02a.corp.local"
+      ipaddress: "192.168.110.152"
+      dns: "192.168.110.94"
+      credential:
+        username: "root"
+        password: "VMware1!"
+    esxmgmt-03a:
+      hostname: "esxmgmt-03a.corp.local"
+      ipaddress: "192.168.110.153"
+      dns: "192.168.110.94"
+      credential:
+        username: "root"
+        password: "VMware1!"
+    esxmgmt-04a:
+      hostname: "esxmgmt-04a.corp.local"
+      ipaddress: "192.168.110.154"
+      dns: "192.168.110.94"
+      credential:
+        username: "root"
+        password: "VMware1!"
+    esxcomp-01a:
+      hostname: "esxcomp-01a.corp.local"
+      ipaddress: "192.168.110.155"
+      dns: "192.168.110.94"
+      credential:
+        username: "root"
+        password: "VMware1!"
+    esxcomp-02a:
+      hostname: "esxcomp-02a.corp.local"
+      ipaddress: "192.168.110.156"
+      dns: "192.168.110.94"
+      credential:
+        username: "root"
+        password: "VMware1!"
+    esxcomp-03a:
+      hostname: "esxcomp-03a.corp.local"
+      ipaddress: "192.168.110.157"
+      dns: "192.168.110.94"
+      credential:
+        username: "root"
+        password: "VMware1!"
+lightwave:
+  domain: "corp.local"
+  credential:
+    username: "administrator"
+    password: "VMware1!"
+  controllers:
+    lightwave-1:
+      site: "corp"
+      appliance:
+        hostref: "esxmgmt-03a"
+        datastore: "ds-site-a-nfs01"
+        memoryMb: 4096
+        cpus: 2
+        root-login: true
+        credential:
+          username: "root"
+          password: "VMware1!"
+        network-config:
+          network: "NAT=Management Network"
+          type: "static"
+          hostname: "lightwave.corp.local"
+          ipaddress: "192.168.110.94"
+          dns: "192.168.110.94"
+          ntp: "192.168.110.10"
+          netmask: "255.255.255.0"
+          gateway: "192.168.110.1"
+photon:
+  imagestore:
+    img-store-1:
+      datastore: "ds-site-a-nfs02"
+      enableimagestoreforvms: "true"
+  cloud:
+    hostref1: "esxcomp-01a"
+    hostref2: "esxcomp-02a"
+    hostref3: "esxcomp-03a"
+  syslog:
+    ipaddress: "192.168.110.24"
+  controllers:
+    pc-1:
+      appliance:
+        hostref: "esxmgmt-01a"
+        datastore: "ds-site-a-nfs01"
+        memoryMb: 4096
+        cpus: 2
+        root-login: true
+        credential:
+          username: "root"
+          password: "VMware1!"
+        network-config:
+          network: "NAT=Management Network"
+          type: "static"
+          hostname: "pc-1.corp.local"
+          ipaddress: "192.168.110.91"
+          netmask: "255.255.255.0"
+          dns: "192.168.110.94"
+          ntp: "192.168.110.10"
+          gateway: "192.168.110.1"
+    pc-2:
+      appliance:
+        hostref: "esxmgmt-02a"
+        datastore: "ds-site-a-nfs01"
+        memoryMb: 4096
+        cpus: 2
+        root-login: true
+        credential:
+          username: "root"
+          password: "VMware1!"
+        network-config:
+          network: "NAT=Management Network"
+          type: "static"
+          hostname: "pc-2.corp.local"
+          ipaddress: "192.168.110.92"
+          netmask: "255.255.255.0"
+          dns: "192.168.110.94"
+          ntp: "192.168.110.10"
+          gateway: "192.168.110.1"
+    pc-3:
+      appliance:
+        hostref: "esxmgmt-03a"
+        datastore: "ds-site-a-nfs01"
+        memoryMb: 4096
+        cpus: 2
+        root-login: true
+        credential:
+          username: "root"
+          password: "VMware1!"
+        network-config:
+          network: "NAT=Management Network"
+          type: "static"
+          hostname: "pc-3.corp.local"
+          ipaddress: "192.168.110.93"
+          netmask: "255.255.255.0"
+          dns: "192.168.110.94"
+          ntp: "192.168.110.10"
+          gateway: "192.168.110.1"
+loadBalancer:
+  load-balancer-1:
+    appliance:
+      hostref: "esxmgmt-04a"
+      datastore: "ds-site-a-nfs01"
+      memoryMb: 2048
+      cpus: 2
+      root-login: true
+      credential:
+        username: "root"
+        password: "VMware1!"
+      network-config:
+        network: "NAT=Management Network"
+        type: "static"
+        hostname: "photonplatform.corp.local"
+        ipaddress: "192.168.110.95"
+        netmask: "255.255.255.0"
+        dns: "192.168.110.94"
+        ntp: "192.168.110.10"
+        gateway: "192.168.110.1"
