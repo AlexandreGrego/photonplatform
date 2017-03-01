@@ -1,11 +1,8 @@
 #!/bin/bash
 set -x #echo on
 
-#tenant variables
-tenant1=orgADevs
-
-#project variables
-project1=orgADept1
+#read in global vars
+. ./globalvars.sh
 
 #variables
 name=k8cluster01
