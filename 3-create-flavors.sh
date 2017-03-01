@@ -1,15 +1,8 @@
 #!/bin/bash
 set -x #echo on
 
-#tenant variables
-tenant1=orgADevs
-tenant2=orgBDevs
-
-#project variables
-project1=orgADept1
-project2=orgADept2
-project3=orgBDept1
-project4=orgBDept2
+#read in global vars
+. ./globalvars.sh
 
 #flavor size variables
 #kinds
