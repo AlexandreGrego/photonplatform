@@ -1,11 +1,10 @@
 #!/bin/bash
 set -x #echo on
 
-#create the tenants and assign resource tickets to each tenant
+#read in global vars
+. ./globalvars.sh
 
-#tenant variables
-tenant1=orgADevs
-tenant2=orgBDevs
+#create two tenants and assign resource tickets (quota's) to each tenant
 
 ##total your cloud resources and divide by 2 for quota variables##
 ##this will create two tenants an assign half the cloud resources to each tenant##
