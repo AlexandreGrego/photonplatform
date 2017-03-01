@@ -1,6 +1,9 @@
 #!/bin/bash
 set -x #echo on
 
+#read in global vars
+. ./globalvars.sh
+
 #variables
 name1=tenant-net
 portgroup1="Tenant Network"
