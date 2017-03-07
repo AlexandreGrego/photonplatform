@@ -7,10 +7,10 @@ set -x #echo on
 #variables
 name=k8cluster01
 dns=192.168.110.10
-gw=192.168.100.1
+gw=192.168.110.1
 mask=255.255.255.0
-masterip=192.168.100.25
-etcdip=192.168.100.26
+masterip=192.168.110.25
+etcdip=192.168.110.26
 containernet=10.2.0.0/16
 workers=1
 flavor=medium-vm
