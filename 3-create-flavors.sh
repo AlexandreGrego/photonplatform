@@ -26,7 +26,7 @@ mediummem=2
 mediumcost=3
 #large-vm
 largename=large-vm
-largecpu=4
+largecpu=2
 largemem=4
 largecost=4
 #ephemeral-vm-disk
