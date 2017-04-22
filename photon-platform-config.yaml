@@ -50,13 +50,13 @@ compute:
         username: "root"
         password: "VMware1!"
 lightwave:
-  domain: "corp.local"
+  domain: "photon.local"
   credential:
     username: "administrator"
     password: "VMware1!"
   controllers:
     lightwave-1:
-      site: "corp"
+      site: "photon"
       appliance:
         hostref: "esxmgmt-03a"
         datastore: "ds-site-a-nfs01"
@@ -69,7 +69,7 @@ lightwave:
         network-config:
           network: "NAT=Management Network"
           type: "static"
-          hostname: "lightwave.corp.local"
+          hostname: "lightwave.photon.local"
           ipaddress: "192.168.110.94"
           dns: "192.168.110.94"
           ntp: "192.168.110.10"
@@ -100,7 +100,7 @@ photon:
         network-config:
           network: "NAT=Management Network"
           type: "static"
-          hostname: "pc-1.corp.local"
+          hostname: "pc-1.photon.local"
           ipaddress: "192.168.110.91"
           netmask: "255.255.255.0"
           dns: "192.168.110.94"
@@ -119,7 +119,7 @@ photon:
         network-config:
           network: "NAT=Management Network"
           type: "static"
-          hostname: "pc-2.corp.local"
+          hostname: "pc-2.photon.local"
           ipaddress: "192.168.110.92"
           netmask: "255.255.255.0"
           dns: "192.168.110.94"
@@ -138,7 +138,7 @@ photon:
         network-config:
           network: "NAT=Management Network"
           type: "static"
-          hostname: "pc-3.corp.local"
+          hostname: "pc-3.photon.local"
           ipaddress: "192.168.110.93"
           netmask: "255.255.255.0"
           dns: "192.168.110.94"
@@ -169,7 +169,7 @@ nsxconfig:
   credential:
     username: "admin"
     password: "VMware1!"
-  privateIpRootCidr: "172.16.1.0/24"
+  privateIpRootCidr: "172.16.0.0/16"
   floatingIpRootRange: "192.168.160.10-192.168.160.100"
   t0RouterId: "61b58b23-a3b5-4183-a3b8-024d77d36c82"
   edgeClusterId: "0e0bffd5-0ff8-4781-a245-fd7614824230"
