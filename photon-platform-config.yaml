@@ -50,13 +50,13 @@ compute:
         username: "root"
         password: "VMware1!"
 lightwave:
-  domain: "photon.local"
+  domain: "corp.local"
   credential:
     username: "administrator"
     password: "VMware1!"
   controllers:
     lightwave-1:
-      site: "photon"
+      site: "corp"
       appliance:
         hostref: "esxmgmt-03a"
         datastore: "ds-site-a-nfs01"
@@ -69,7 +69,7 @@ lightwave:
         network-config:
           network: "NAT=Management Network"
           type: "static"
-          hostname: "lightwave.photon.local"
+          hostname: "lightwave.corp.local"
           ipaddress: "192.168.110.94"
           dns: "192.168.110.94"
           ntp: "192.168.110.10"
@@ -100,7 +100,7 @@ photon:
         network-config:
           network: "NAT=Management Network"
           type: "static"
-          hostname: "pc-1.photon.local"
+          hostname: "pc-1.corp.local"
           ipaddress: "192.168.110.91"
           netmask: "255.255.255.0"
           dns: "192.168.110.94"
@@ -119,7 +119,7 @@ photon:
         network-config:
           network: "NAT=Management Network"
           type: "static"
-          hostname: "pc-2.photon.local"
+          hostname: "pc-2.corp.local"
           ipaddress: "192.168.110.92"
           netmask: "255.255.255.0"
           dns: "192.168.110.94"
@@ -138,7 +138,7 @@ photon:
         network-config:
           network: "NAT=Management Network"
           type: "static"
-          hostname: "pc-3.photon.local"
+          hostname: "pc-3.corp.local"
           ipaddress: "192.168.110.93"
           netmask: "255.255.255.0"
           dns: "192.168.110.94"
@@ -164,3 +164,17 @@ loadBalancer:
         dns: "192.168.110.94"
         ntp: "192.168.110.10"
         gateway: "192.168.110.1"
+nsxconfig:
+  ipaddress: "192.168.110.201"
+  credential:
+    username: "admin"
+    password: "VMware1!"
+  privateIpRootCidr: "172.16.1.0/24"
+  floatingIpRootRange: "192.168.160.10-192.168.160.100"
+  t0RouterId: "61b58b23-a3b5-4183-a3b8-024d77d36c82"
+  edgeClusterId: "0e0bffd5-0ff8-4781-a245-fd7614824230"
+  overlayTransportZoneId: "219c58f3-bf00-407f-8c66-e1bc43ddb4b3"
+  tunnelIpPoolId: "2659cbdb-1397-4d70-bc52-ccd99bf25432"
+  hostUplinkPnic: "vmnic1"
+  hostUplinkVlanId: "0"
+  dnsServerAddresses: "192.168.110.10"
