@@ -12,8 +12,8 @@ docker="images/debian-8.2.vmdk"
 #import images
 
 #import kubernetes image
-echo -e "\r" | photon image create "$k8s" -n kubernetes -i EAGER
+photon -n image create "$k8s" -n kubernetes -i EAGER
 #import harbor image
-echo -ne "\n" | photon image create "$harbor" -n harbor -i ON_DEMAND
+photon -n image create "$harbor" -n harbor -i ON_DEMAND
 #import docker-machine image
-echo -ne "\n" | photon image create "$docker" -n "docker-machine" -i EAGER
+photon -n image create "$docker" -n "docker-machine" -i EAGER

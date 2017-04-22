@@ -8,9 +8,9 @@ set -x #echo on
 pass="VMware1!"
 name=harbor01
 dns=192.168.110.10
-gw=192.168.110.1
+gw=172.16.10.1
 mask=255.255.255.0
-masterip=192.168.110.20
+masterip=172.16.10.20
 flavor=medium-vm
 sshkey="../.ssh/id_rsa.pub"
 
@@ -18,7 +18,7 @@ photon tenant set $tenant1
 photon project set $project1
 
 #create harbor registry
-echo y | photon cluster create -n $name -k HARBOR --dns $dns --gateway $gw --netmask $mask --master-ip $masterip -v $flavor --admin-password $pass --ssh-key "$sshkey"
+photon -n cluster create -n $name -k HARBOR --dns $dns --gateway $gw --netmask $mask --master-ip $masterip -v $flavor --admin-password $pass --ssh-key "$sshkey"
 
 #save the certificate to file
 harboruuid=$(photon cluster list | grep $name | awk '{print $1}')

@@ -12,10 +12,12 @@ set -x #echo on
 cpu=200
 mem=512
 vm=120
+vmcost=300
 persistentdisk=100
 persistentddiskcapacity=2000
 ephemeraldisk=100
 ephemeraldiskcapacity=2000
+floatingips=1000
 
 #create tenant 1
 photon -n tenant create $tenant1
@@ -23,5 +25,5 @@ photon -n tenant create $tenant1
 photon -n tenant create $tenant2
 
 #create quota's and assign them to tenants
-echo y |  photon tenant quota set $tenant1 -l "vm.cpu $cpu COUNT, vm.memory $mem GB, vm $vm COUNT, persistent-disk.count $persistentdisk COUNT, persistent-disk.capacity $persistentddiskcapacity GB, ephemeral-disk $ephemeraldisk COUNT, ephemeral-disk.capacity $ephemeraldiskcapacity GB"
-echo y | photon tenant quota set $tenant2 -l "vm.cpu $cpu COUNT, vm.memory $mem GB, vm $vm COUNT, persistent-disk.count $persistentdisk COUNT, persistent-disk.capacity $persistentddiskcapacity GB, ephemeral-disk $ephemeraldisk COUNT, ephemeral-disk.capacity $ephemeraldiskcapacity GB"
+photon -n tenant quota set $tenant1 -l "vm.cpu $cpu COUNT, vm.memory $mem GB, vm $vm COUNT, vm.cost $vmcost COUNT, persistent-disk.count $persistentdisk COUNT, persistent-disk.capacity $persistentddiskcapacity GB, ephemeral-disk $ephemeraldisk COUNT, ephemeral-disk.capacity $ephemeraldiskcapacity GB, sdn.floatingip.size $floatingips COUNT"
+photon -n tenant quota set $tenant2 -l "vm.cpu $cpu COUNT, vm.memory $mem GB, vm $vm COUNT, vm.cost $vmcost COUNT, persistent-disk.count $persistentdisk COUNT, persistent-disk.capacity $persistentddiskcapacity GB, ephemeral-disk $ephemeraldisk COUNT, ephemeral-disk.capacity $ephemeraldiskcapacity GB, sdn.floatingip.size $floatingips COUNT"
