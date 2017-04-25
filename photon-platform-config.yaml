@@ -58,7 +58,7 @@ lightwave:
     lightwave-1:
       site: "photon"
       appliance:
-        hostref: "esxmgmt-03a"
+        hostref: "esxmgmt-01a"
         datastore: "ds-site-a-nfs01"
         memoryMb: 4096
         cpus: 2
@@ -89,7 +89,7 @@ photon:
   controllers:
     pc-1:
       appliance:
-        hostref: "esxmgmt-01a"
+        hostref: "esxmgmt-02a"
         datastore: "ds-site-a-nfs01"
         memoryMb: 4096
         cpus: 2
@@ -108,7 +108,7 @@ photon:
           gateway: "192.168.110.1"
     pc-2:
       appliance:
-        hostref: "esxmgmt-02a"
+        hostref: "esxmgmt-03a"
         datastore: "ds-site-a-nfs01"
         memoryMb: 4096
         cpus: 2
@@ -127,7 +127,7 @@ photon:
           gateway: "192.168.110.1"
     pc-3:
       appliance:
-        hostref: "esxmgmt-03a"
+        hostref: "esxmgmt-04a"
         datastore: "ds-site-a-nfs01"
         memoryMb: 4096
         cpus: 2
