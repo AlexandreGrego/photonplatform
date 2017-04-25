@@ -30,11 +30,11 @@ largecpu=2
 largemem=4
 largecost=4
 #ephemeral-vm-disk
-ephemeraldiskname1=vm-disk
+ephemeraldiskname1=vm-disk-eph
 diskcount1=1
 diskcost1=1
 #persistent-vm-disk
-persistentdiskname1=vm-disk
+persistentdiskname1=vm-disk-persist
 #cluster-vm-disk ephemeral-vm-disk
 clusterephemeraldiskname1=cluster-vm-disk
 
