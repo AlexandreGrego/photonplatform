@@ -62,7 +62,7 @@ lightwave:
         datastore: "ds-site-a-nfs01"
         memoryMb: 4096
         cpus: 2
-        root-login: true
+        enable-ssh-root-login: true
         credential:
           username: "root"
           password: "VMware1!"
@@ -93,7 +93,7 @@ photon:
         datastore: "ds-site-a-nfs01"
         memoryMb: 4096
         cpus: 2
-        root-login: true
+        enable-ssh-root-login: true
         credential:
           username: "root"
           password: "VMware1!"
@@ -112,7 +112,7 @@ photon:
         datastore: "ds-site-a-nfs01"
         memoryMb: 4096
         cpus: 2
-        root-login: true
+        enable-ssh-root-login: true
         credential:
           username: "root"
           password: "VMware1!"
@@ -131,7 +131,7 @@ photon:
         datastore: "ds-site-a-nfs01"
         memoryMb: 4096
         cpus: 2
-        root-login: true
+        enable-ssh-root-login: true
         credential:
           username: "root"
           password: "VMware1!"
@@ -151,7 +151,7 @@ loadBalancer:
       datastore: "ds-site-a-nfs01"
       memoryMb: 2048
       cpus: 2
-      root-login: true
+      enable-ssh-root-login: true
       credential:
         username: "root"
         password: "VMware1!"
