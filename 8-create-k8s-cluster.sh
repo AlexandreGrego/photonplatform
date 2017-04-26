@@ -18,4 +18,4 @@ photon tenant set $tenant1
 photon project set $project1
 
 #create k8s cluster
-photon -n service create -n $name -k KUBERNETES --number-of-masters $masternum --container-network "$containernet" --number-of-etcds $etcdnum -c $workers -v $flavor --ssh-key $sshkey --registry-ca-cert $registryca
+echo y | photon service create -n $name -k KUBERNETES --number-of-masters $masternum --container-network "$containernet" --number-of-etcds $etcdnum -c $workers -v $flavor --ssh-key $sshkey --registry-ca-cert $registryca
