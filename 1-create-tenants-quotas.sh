@@ -18,6 +18,10 @@ persistentddiskcapacity=2000
 ephemeraldisk=100
 ephemeraldiskcapacity=2000
 floatingips=1000
+storagelocalvmfs=150
+storagesharedvmfs=150
+storagevsan=150
+storagenfs=150
 
 #create tenant 1
 photon -n tenant create $tenant1
@@ -25,5 +29,5 @@ photon -n tenant create $tenant1
 photon -n tenant create $tenant2
 
 #create quota's and assign them to tenants
-photon -n tenant quota set $tenant1 -l "vm.cpu $cpu COUNT, vm.memory $mem GB, vm $vm COUNT, vm.cost $vmcost COUNT, persistent-disk.count $persistentdisk COUNT, persistent-disk.capacity $persistentddiskcapacity GB, ephemeral-disk $ephemeraldisk COUNT, ephemeral-disk.capacity $ephemeraldiskcapacity GB, sdn.floatingip.size $floatingips COUNT"
-photon -n tenant quota set $tenant2 -l "vm.cpu $cpu COUNT, vm.memory $mem GB, vm $vm COUNT, vm.cost $vmcost COUNT, persistent-disk.count $persistentdisk COUNT, persistent-disk.capacity $persistentddiskcapacity GB, ephemeral-disk $ephemeraldisk COUNT, ephemeral-disk.capacity $ephemeraldiskcapacity GB, sdn.floatingip.size $floatingips COUNT"
+photon -n tenant quota set $tenant1 -l "vm.cpu $cpu COUNT, vm.memory $mem GB, vm $vm COUNT, vm.cost $vmcost COUNT, persistent-disk $persistentdisk COUNT, persistent-disk.capacity $persistentddiskcapacity GB, ephemeral-disk $ephemeraldisk COUNT, ephemeral-disk.capacity $ephemeraldiskcapacity GB, storage.LOCAL_VMFS $storagelocalvmfs COUNT, storage.SHARED_VMFS $storagesharedvmfs COUNT, storage.VSAN $storagevsan COUNT, storage.NFS $storagenfs COUNT, sdn.floatingip.size $floatingips COUNT"
+photon -n tenant quota set $tenant2 -l "vm.cpu $cpu COUNT, vm.memory $mem GB, vm $vm COUNT, vm.cost $vmcost COUNT, persistent-disk $persistentdisk COUNT, persistent-disk.capacity $persistentddiskcapacity GB, ephemeral-disk $ephemeraldisk COUNT, ephemeral-disk.capacity $ephemeraldiskcapacity GB, storage.LOCAL_VMFS $storagelocalvmfs COUNT, storage.SHARED_VMFS $storagesharedvmfs COUNT, storage.VSAN $storagevsan COUNT, storage.NFS $storagenfs COUNT, sdn.floatingip.size $floatingips COUNT"
